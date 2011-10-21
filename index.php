@@ -1,81 +1,68 @@
 <?php include("header.php");?>
 <script>
-	$(document).ready(function(){	
+	function setdevelopersinfo(){
+		/*Set developer info*/
+		developersinfoarray=new Array;		
+		developersinfoarray[0]=new Array("url('img/dev.png')","jose luis","Developer","XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX ...","");
+		developersinfoarray[1]=new Array("url('img/picturedeveloper1.png')","Abraham Barrera","Desarrollador","Desde pequeño le gustó crear cosas, y ...","");
+		
+		/*Set developer medails*/
+		developermeadils=new Array;
+		developermeadils[0]=new Array("php","sql");
+		developermeadils[1]=new Array("php","ruby","sql");
+	}	
+	function medails(developercode){
+		var strmedails="";
+		for (var i=0; i<=((developermeadils[developercode].length)-1); i++){
+			strmedails+="<div class='frameworkicon'>"+developermeadils[developercode][i]+"</div>";
+		}
+		$("#medailcontainer").html(strmedails);		
+	}
+	$(document).ready(function(){
+		setdevelopersinfo();	
 	   /*$("#bodywrapper").css({'background-color' : '#2c5283', 'margin' : '127px 0 0'});	
 	   $("#pagecomment").html("Contactanos<br>");	*/   
-	   $("#bodywrapper").css("height","1410px");	   	   	   		
+	   $("#bodywrapper").css("height","1410px");
+	   
+	   $(".developerinfofacebox").click(function(){
+	   		
+	   		$("#developinfopicture").css("background-image",developersinfoarray[$(this).attr("dev")][0]);
+	   		
+	   		$("#developername").html(developersinfoarray[$(this).attr("dev")][1]);
+	   		$("#developerrange").html(developersinfoarray[$(this).attr("dev")][2]);
+	   		$("#developercomment").html(developersinfoarray[$(this).attr("dev")][3]);
+	   		
+	   		medails($(this).attr("dev"));
+	   			   		    
+	   });	   	   	   		
 	});	
 </script>
-<style>
-	.frameworkicon{
-		width:30px;
-		height:30px;
-		background-color:#e4e4e4;
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		border-radius: 3px;
-		margin:13px 8px 0 0;
-		float:left;
-	}
-	#bodyseparator{
-		background-image:url(img/bodyseparator.png); height:20px; width:905px; float:left; background-repeat:no-repeat; margin:38px 0 38px 60px;
-	}
-	.blogmaincontainer{
-		margin: 141px 0 0 89px; width: 290px;
-	}
-	.blogmessagetitle{
-		font-weight:bold;		
-		font-family:Arial;
-		font-size:14px;
-	}
-	.blogmessagedate{
-		font-style:italic;
-		font-family:Arial;
-		font-size:14px;
-	}
-	.blogcontainer{
-		text-align:center; color:#fff; margin:0px 0px 54px 0px;
-	}
-	.lastaccess{
-		color:#b0cce6;
-		font-weight:bold;
-		font-size:17px;
-	}
-	.teammediacontainers{
-		background-image:url(img/teammediacontainer.png); width:357px; height:304px; margin:55px 0 0 82px; z-index:-1000;
-	}
-	.bloglastaccessrow{
-		float:left; background-image:url(img/entradasanterioresarrow.png); width:12px; height:15px;
-	}
-	#bodybottomright{
-		float:left; background-image:url(img/bodybottomright.png); width:530px; height:1134px; background-repeat:no-repeat; margin:0 0 0 50px;
-	}
-	
-	
-	.techinfo{
-		float:left;
-		width:160px;
-		height:46px;
-		margin:41px 0px 0px 5px;
-	}
-	.techname{
-		color:#3889db;
-		font-size:18px;
-	}
-</style>
-<div style="float:left; width:585px;">	
-	<div style="background-image:url(img/homebluebubbles.png); width:426px; height:179px; float:left; position:relative; margin:140px 0 0 1px;"></div>   
-    <div style="background-image:url(img/picturedeveloper2.png); width:290px; height:335px; margin-left:-133px; float:left;"></div>      
+<div id="developinfoleft">	
+	<div id="developinfofaces">
+		<div class="developerinfofacebox" dev="0"><img width="26" height="29" src="img/developerthumbnails.png" /></div>
+		<div class="developerinfofacebox" dev="0"><img width="26" height="29" src="img/developerthumbnails.png" /></div>
+		<div class="developerinfofacebox" dev="0"><img width="26" height="29" src="img/developerthumbnails.png" /></div>
+		<div class="developerinfofacebox" dev="0"><img width="26" height="29" src="img/developerthumbnails.png" /></div>
+		<div class="developerinfofacebox" dev="0"><img width="26" height="29" src="img/developerthumbnails.png" /></div>				
+		<div class="developerinfofacebox" dev="1"><img width="26" height="29" src="img/developerthumbnails2.png" /></div>
+		<div class="developerinfofacebox" dev="1"><img width="26" height="29" src="img/developerthumbnails2.png" /></div>
+		<div class="developerinfofacebox" dev="1"><img width="26" height="29" src="img/developerthumbnails2.png" /></div>		
+	</div>
+	<div id="developinfobubbles"></div>   
+    <div id="developinfopicture"></div>      
 </div>
-<div style="float:left;">
-    <div id="developerinfo" style="width:240px; margin:113px 0 0 35px; height:178px; background-color:#e4e4e4; float:left;"></div>
-    <div style="float:left; background-image:url(img/developerinforight.png); height:178px; width:93px; margin:113px 0px 0 0;"></div>
-    <div style="position:absolute; margin:113px 0 0 35px;">
-<span class="pagecomment" style="text-decoration:underline; font-style:normal;">Abraham Barrera</span><br />
-<span style="font-weight:bold; font-style:italic;">Desarrollador</span><br />
-Desde pequeño le gustó crear cosas, y no descubrió<br /> sino hasta la enseñanza media que la programación de<br /> computadores es la mejor forma de crear e innovar. <br />Vibra desarrollando para móviles (iPhone/iPad),<br /> aunque también desarrolla en otras tecnologías<br /> como J2EE y Python
-    </div>
-    <div style="margin:0 0 0 35px;">
+<div id="developinforight">	
+    <div id="developinforightcontainer1"></div>
+    <div id="developinforightcontainer2"></div>    
+    <div id="developinfotextcontainer">
+		<div id="developername" class="pagecomment">Abraham Barrera</div>
+		<div id="developerrange" >Desarrollador</div>
+		<div id="developercomment">
+			Desde pequeño le gustó crear cosas, y no descubrió sino hasta la enseñanza media que la programación de computadores es la mejor forma de crear e innovar. Vibra desarrollando para móviles (iPhone/iPad),aunque también desarrolla en otras tecnologías
+			 como J2EE y Python		 
+	 	</div>
+ 	</div>
+    <div id="medailcontainer">
     	<div class="frameworkicon"></div>
         <div class="frameworkicon"></div>
         <div class="frameworkicon"></div>

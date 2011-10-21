@@ -29,9 +29,8 @@ hgroup, nav, section {
 /*HEADER*/
 #headerwrapper{	
 	width:1024px;
-	height:375px;	
-	z-index:1000;
-	position:fixed;
+	height:470px;	
+	z-index:1000;	
 	top:0px;
 }
 	#headertopcontainer{
@@ -63,7 +62,7 @@ hgroup, nav, section {
 			 width:161px;
 			 height:48px;
 			 float:left;
-			 opacity:0;
+			 opacity:0;			 
 		}
 		#shadowworks{
 			background-image:url(../img/headerworkscursorlayer.png);
@@ -71,7 +70,7 @@ hgroup, nav, section {
 			 width:163px;
 			 height:54px;
 			 float:left;
-			 opacity:0;
+			 opacity:0;			
 		}
 		#shadowblog{
 			background-image:url(../img/headerblogcursorlayer.png);
@@ -79,7 +78,7 @@ hgroup, nav, section {
 			 width:144px;
 			 height:57px;
 			 float:left;
-			 opacity:0;
+			 opacity:0;			 
 		}
 		#shadowcontact{
 			background-image:url(../img/headercontactcursorlayer.png);			
@@ -87,10 +86,10 @@ hgroup, nav, section {
 			 width:145px;
 			 height:91px;
 			 float:left;
-			 opacity:0;
+			 opacity:0;			
 		}		
 	#headerbottomcontainer{
-		background-image:url(../img/header2.png);
+		background-image:url(../img/header.png);
 		width:1024px;
 		height:372px;
 		position:absolute;
@@ -201,7 +200,7 @@ hgroup, nav, section {
 	width:1024px;
 	height:1024px;
 	/*background-color:#09C;*/
-	margin:186px 0 0 0;
+	margin:-284px 0 0 0;
 }
 /*FOOTER*/
 #footerwrapper{
@@ -285,7 +284,123 @@ hgroup, nav, section {
 				float:left;
 			}
 
+/*index*/
 
+#developinfoleft{
+	float:left; 
+	width:585px;
+	position: relative;	
+}
+	#developinfofaces{		
+	    float: left;
+	    height: 76px;
+	    margin: 188px 0 0 16px;
+	    position: absolute;
+	    width: 164px;	
+	    z-index: 101;    
+	}	
+		.developerinfofacebox{
+			float:left;
+			width: 28px;
+			height: 29px;
+			margin: 2px 11px 9px 2px;
+			cursor: pointer;				
+		}
+	#developinfobubbles{
+		background-image:url(../img/homebluebubbles.png); 
+		width:426px; 
+		height:179px; 
+		float:left; 
+		position:relative; 
+		margin:140px 0 0 1px;
+	}
+	#developinfopicture{
+		background-image:url(../img/picturedeveloper2.png); 
+		width:290px;
+		height:335px; 
+		margin-left:-133px; 
+		float: right;
+	}
+#developinforight{
+	float: left;
+}
+	#developinforightcontainer1{
+    	width:240px; margin:113px 0 0 35px; height:178px; background-color:#e4e4e4; float:left;
+    }
+    #developinforightcontainer2{
+    	float:left; background-image:url(../img/developerinforight.png); height:178px; width:93px; margin:113px 0px 0 0;"
+    }
+    #developinfotextcontainer{
+    	position:absolute; margin:113px 0 0 35px;
+    }
+    #developername{
+    	text-decoration:underline; font-style:normal;
+    }
+    #developerrange{
+    	font-weight:bold; font-style:italic;    	
+    }
+    #developercomment{
+    	width: 325px;
+    }  
+    #medailcontainer{
+    	margin:0 0 0 35px;
+    }
+        
+.frameworkicon{
+	width:30px;
+	height:30px;
+	background-color:#e4e4e4;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin:13px 8px 0 0;
+	float:left;
+}
+#bodyseparator{
+	background-image:url(../img/bodyseparator.png); height:20px; width:905px; float:left; background-repeat:no-repeat; margin:38px 0 38px 60px;
+}
+.blogmaincontainer{
+	margin: 141px 0 0 89px; width: 290px;
+}
+.blogmessagetitle{
+	font-weight:bold;		
+	font-family:Arial;
+	font-size:14px;
+}
+.blogmessagedate{
+	font-style:italic;
+	font-family:Arial;
+	font-size:14px;
+}
+.blogcontainer{
+	text-align:center; color:#fff; margin:0px 0px 54px 0px;
+}
+.lastaccess{
+	color:#b0cce6;
+	font-weight:bold;
+	font-size:17px;
+}
+.teammediacontainers{
+	background-image:url(../img/teammediacontainer.png); width:357px; height:304px; margin:55px 0 0 82px; z-index:-1000;
+}
+.bloglastaccessrow{
+	float:left; background-image:url(../img/entradasanterioresarrow.png); width:12px; height:15px;
+}
+#bodybottomright{
+	float:left; background-image:url(../img/bodybottomright.png); width:530px; height:1134px; background-repeat:no-repeat; margin:0 0 0 50px;
+}
+
+
+.techinfo{
+	float:left;
+	width:160px;
+	height:46px;
+	margin:41px 0px 0px 5px;
+}
+.techname{
+	color:#3889db;
+	font-size:18px;
+}
 /*works*/
 #worktitledesc{
 	margin:290px 0px 23px 0px;
