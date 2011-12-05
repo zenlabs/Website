@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
+#
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -15,7 +15,7 @@ development:
   database: zenlab_development
   pool: 5
   username: root
-  password:
+  password: demo123
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: zenlab_test
   pool: 5
   username: root
-  password:
+  password: demo123
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -38,5 +38,5 @@ production:
   database: zenlab_production
   pool: 5
   username: root
-  password:
+  password: demo123
   socket: /var/run/mysqld/mysqld.sock
