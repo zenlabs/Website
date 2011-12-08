@@ -1,15 +1,37 @@
-#footer_front.grid_12
-  #copyrigth.grid_10
-    %p.capitalize COPYRIGTH. All Rights Reserved Digital Works México S.A. de C.V
-  #sociales.grid_2
-    %p.big Come
-    %p.bigest
-      %span.littler> &
-      Visit
-    %p.little Our World
-    %img{:alt => "youtube", :height => "24", :src => "/images/youtube.png", :width => "24"}/
-    %img{:alt => "twitter", :height => "23", :src => "/images/twitter.png", :width => "24"}/
-    %img{:alt => "facebook", :height => "23", :src => "/images/facebook.png", :width => "24"}/
-/ footer
-/ wapper
+#footerwrapper
+  #footertop
+    %img{:height => "90", :src => "../images/footertop2.png", :width => "515"}/
+  #footerbottom
+    #footerbottomleftcontainer
+      #fooerbosttomlefttop
+        %img{:height => "34", :src => "../images/zenlabslogofooter.png", :style => "width:96px; margin:13px 2px 3px 10px;", :width => "96"}/
+      #fooerbottomleftcenter{:style => "height:90px; padding-left:185px;"}
+        %table{:align => "center", :cellpadding => "30", :cellspacing => "5"}
+          %tr
+            %td.footertextblue Elementos de mapa de sitio
+            %td.footertextblue Elementos de mapa de sitio
+          %tr
+            %td.footertextskyblue Ejemplo
+            %td.footertextskyblue Ejemplo
+          %tr
+            %td.footertextskyblue Ejemplo
+            %td.footertextskyblue Ejemplo
+          %tr
+            %td.footertextskyblue Ejemplo
+            %td.footertextskyblue Ejemplo
+      #fooerbottomleftbottom
+        %div{:style => "width:200px; height:16px; background-color:#3c5280; float:left; font-size:11px; color:#FFF; padding-left:10px;"} Copyright © 2011 Zenlabs
+        %div{:style => "background-image:url(../images/footerleftbottom.png); margin-left:-1px; background-repeat:no-repeat; width:55px; height:16px; float:left;"}
+    #footerbottomcentercontainer
+    #footerbottomrightcontainer
+      %form
+        #footercontactleft
+          .contacttitle Contacto rápido
+          %input.inputtextcontact{:type => "text"}/
+          %br/
+          %input.inputtextcontact{:type => "text"}/
+        #footercontactright
+          %textarea.textareacontact{:cols => "5", :rows => "5"}
+          .contactsubmitbutton Enviar
+/ mainwrapper
 
