@@ -1,0 +1,10 @@
+#text_left.grid_4
+  %h1
+    = @staff.title
+    %br
+    %span
+      = @staff.subtitle
+  %p= @staff.content
+
+#about_image.grid_7
+  = image_tag @staff.last_photo_url, :height => "542", :width => "464", :alt => @staff.title

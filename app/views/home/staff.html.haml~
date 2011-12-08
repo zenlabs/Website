@@ -1,0 +1,8 @@
+.clear
+#main.grid_12
+  .grid_5
+    %h1 Lorem Ipsum
+  #about_image.grid_7
+    %img{:alt => "production", :height => "554", :src => "images/img_ini.jpg", :width => "465"}/
+/ main
+.clear

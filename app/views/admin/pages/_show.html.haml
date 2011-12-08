@@ -1,0 +1,19 @@
+%ul
+  %li
+    %strong ID:
+    = @page.id
+  %li
+    %strong Title:
+    = @page.title
+  %li
+    %strong Slug:
+    = @page.slug
+  %li
+    %strong Content:
+    = @page.content
+  %li
+    %strong Tag list:
+    = @page.tag_list
+  %li
+    %strong Image:
+    = image_tag @page.last_photo_url(:thumb)

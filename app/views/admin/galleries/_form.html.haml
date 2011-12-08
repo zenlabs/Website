@@ -1,0 +1,13 @@
+= semantic_form_for [:admin, @gallery], :html =>{ :multipart => true} do |f|
+  = f.inputs "Gallery Photos" do
+    = f.input :title
+    = f.input :description
+
+    = f.semantic_fields_for :photos do |photo|
+      = render "photo_fields", :f => photo
+    = f.semantic_fields_for :videos do |video|
+      = render "video_fields", :f => video
+    .links
+      = link_to_add_association 'Add photo file', f, :photos
+      = link_to_add_association 'Add video file', f, :videos
+  = f.buttons

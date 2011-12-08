@@ -1,0 +1,34 @@
+.scroll-pane-os.grid_12
+  .scrollbar
+    .track
+      .thumb
+        .end
+  .viewport
+    .overview
+      - for staff in @staff
+        .service.grid_12
+          #text_left.staff_info.grid_3
+            #nombre
+              %h1.nombre
+                = staff.title
+                %br
+                %span.cargo
+                  = staff.subtitle
+            %p
+              =RedCloth.new(staff.content).to_html.html_safe
+
+          #about_image.grid_7.padding_15tb
+            = image_tag staff.last_photo_url, :height => "542", :width => "464", :alt => staff.title
+          .clear
+
+:javascript
+  $(function()
+    {
+      $('.scroll-pane-os').jScrollPane(
+        {
+          showArrows: true,
+          verticalArrowPositions: 'os'
+          //horizontalArrowPositions: 'os'
+        }
+        );
+    });

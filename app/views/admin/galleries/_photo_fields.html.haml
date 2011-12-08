@@ -1,0 +1,6 @@
+.nested-fields
+  = f.inputs do
+    = f.input :photo, :as => :file
+    - unless f.object.new_record?
+      = image_tag f.object.photo.url(:thumb)
+    = link_to_remove_association "remove photo", f

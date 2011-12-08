@@ -1,0 +1,32 @@
+.scroll-pane-os.grid_12
+  - for post in @posts
+    .service.grid_12
+      #text_left_valign.grid_2.border_right
+        %p
+          %span.subtitulo_blog.without_padding_bottom= post.title
+          %span.date= post.created_at.strftime('%d/%m/%Y')
+          %span.dw.comments_blog= link_to pluralize(post.comments.length,'Comment'), blog_path(post)
+
+      #text_left_valign.grid_3
+        %p
+          = truncate post.content, :length => 450
+          %br
+          %span.dw.comments_blog= link_to "More", blog_path(post)
+      #text_left_valign.grid_4
+        %p
+          - if post.last_photo_url(:blog)
+            = image_tag post.last_photo_url(:blog), :alt => post.title, :height => "153", :width => "250"
+          - elsif videotron = get_video(post.last_video_url)
+            = image_tag videotron.thumbnail, :alt => post.title, :height => "153", :width => "250"
+      %br.clear
+:javascript
+  $(function()
+    {
+      $('.scroll-pane-os').jScrollPane(
+        {
+          showArrows: true,
+          verticalArrowPositions: 'os'
+          //horizontalArrowPositions: 'os'
+        }
+        );
+    });

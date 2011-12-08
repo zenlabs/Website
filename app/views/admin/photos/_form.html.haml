@@ -1,0 +1,5 @@
+= semantic_form_for [:admin, @photo], :html =>{ :multipart => true} do |f|
+  = f.inputs "Photos" do
+    /= f.input :gallery
+    = f.input :photo, :as => :file
+  = f.buttons

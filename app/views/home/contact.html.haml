@@ -1,0 +1,46 @@
+.grid_4.datos_contacto
+  %p.titulo_blog
+    Digital Works
+    %br
+    %span.date.space
+      Rio San Lorenzo 505-A
+      %br
+      Col. Fuentes del Valle 66220
+      %br
+      San Pedro Garza Garcia, NL
+      %br
+      México
+      %br
+      T. +52[81]8335-5348
+      %br
+      %br
+      %br
+      %br
+      %p.border_bottom contact@digitalworks.com.mx
+      %br
+      %br
+  #form_contact
+    = render :partial => 'shared/notice'
+
+    = form_for @message, :url => contact_path do |f|
+      %label Name:
+      = f.text_field :name, :class => 'input_contact'
+      %br
+      %label E-mail:
+      = f.text_field :email, :class => 'input_contact'
+      %br
+      %label How did you find out about us?:
+      = f.text_field :contact_how, :class => 'input_contact_how'
+      %br
+      %label.top Message:
+      = f.text_area :message, :class => 'input_contact_message', :cols => '25', :rows => '4'
+      / main
+      %br
+      %br
+      = f.submit "Send", :class => 'btn'
+
+#about_image.grid_7
+  %iframe{:frameborder => "0", :height => "543", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "http://maps.google.com/?ie=UTF8&ll=25.661508,-100.362521&spn=0.004922,0.009645&t=m&z=17&vpsrc=6&output=embed", :width => "464"}
+%br/
+/%small View
+/  %a{:href => "http://maps.google.com/?ie=UTF8&ll=25.661508,-100.362521&spn=0.004922,0.009645&t=m&z=17&vpsrc=6&source=embed", :style => "color:#0000FF;text-align:left"} DW

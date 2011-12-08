@@ -1,0 +1,23 @@
+development:
+  adapter: mysql2
+  database: digital
+  username: root
+  password: demo
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: mysql2
+  database: digital_test
+  username: root
+  password:
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: mysql2
+  database: digital_production
+  username: root
+  password:
+  pool: 5
+  timeout: 5000

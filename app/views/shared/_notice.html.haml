@@ -1,0 +1,14 @@
+- if flash[:notice]
+  .ui-widget
+    .ui-state-highlight.ui-corner-all{:style => 'margin-bottom:20px; padding: 10px;'}
+      %p
+        %strong Notice
+        = flash[:notice]
+- if alert
+  .ui-widget
+    .ui-state-error.ui-corner-all{:style => 'margin-bottom:20px; padding: 10px;'}
+      %p
+        %strong Alert
+        = alert
+
+

@@ -1,0 +1,17 @@
+#left_menu.grid_3
+  %ul
+    = render @galleries, :gs => @gallery
+#player_video.grid_7
+  - if videotron = get_video(@video.url)
+    = raw videotron.embed_html(489, 325)
+  %br/
+  %br/
+  %p
+    Client:
+    %strong AXTEL
+  %p
+    Add Name:
+    %strong Axtel Extension IP
+  %p
+    Date:
+    %strong 10.05.2011

@@ -1,0 +1,26 @@
+.scroll-pane-os.grid_12.servicios
+  .scrollbar
+    .track
+      .thumb
+        .end
+  .viewport
+    .overview
+      - for service in @services
+        .service.grid_12
+          #text_left.about.staff
+            %h1= service.title
+            %p= service.content
+          #img_rigth.grid_5
+            = image_tag(service.last_photo_url(:medium), :alt => service.title)
+
+:javascript
+  $(function()
+    {
+      $('.scroll-pane-os').jScrollPane(
+        {
+          showArrows: true,
+          verticalArrowPositions: 'os'
+          //horizontalArrowPositions: 'os'
+        }
+        );
+    });

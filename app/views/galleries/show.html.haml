@@ -1,0 +1,10 @@
+#left_menu.grid_3
+  %ul
+    = render @galleries, :gs => @gallery
+#back.grid_8
+  -if @videos_galeria && !@videos_galeria.empty?
+    - for video in @videos_galeria
+      - if videotron = get_video(video.url)
+        = link_to image_tag(videotron.thumbnail), gallery_video_path(@gallery, video)
+  -else
+    %h1 No videos recorded in this gallery

@@ -1,0 +1,65 @@
+#comments.scroll-pane-os.grid_7
+  .scrollbar
+    .track
+      .thumb
+        .end
+  .viewport
+    .overview
+      %p.titulo_blog
+        = @post.title
+        %br/
+        %span.date= @post.created_at.strftime('%d/%m/%Y')
+      %br/
+      .clear
+      %p.gris= raw sanitize(textilize(@post.content))
+      %br/
+      - for image in @post.photos
+        = image_tag image.photo.url(:blog), :alt => @post.title, :height => "185", :width => "301"
+      - for video in @post.videos
+        - if videotron = get_video(video.url)
+          = raw videotron.embed_html(489, 325)
+      %br/
+      %strong Tags:
+      = @post.blog_list
+      %br/
+      .clear
+      .number_coments
+        %p= pluralize(@post.comments.length, "Comment")
+      - if @post.comments.empty?
+        .comment
+          %p No comments.
+      - else
+        - for comment in @post.comments
+          .coment
+            %p.titulo_blog= comment.name
+            %p.date_coment= comment.created_at.strftime('%d/%m/%Y')
+#img_rigth.grid_4
+  %p.title_fom_blog Post your comment ;)
+  = form_for(Comment.new, :url => blog_create_comment_path(@post)) do |f|
+    #content_form_left
+      %label.label Nombre:
+      %br
+      %label.label E-mail:
+      %br
+      %label.label Website:
+      %br
+      %label.label Message:
+    #content_form_right
+      = f.text_field :name,    :class => 'input_post'
+      = f.text_field :email,   :class => 'input_post'
+      = f.text_field :website, :class => 'input_post'
+      = f.text_area  :comment, :cols => '25', :rows => '4', :class => 'input_post_message'
+    %br
+    = submit_tag 'Post comment', :class => 'btn padding_right'
+
+:javascript
+  $(function()
+    {
+      $('.scroll-pane-os').jScrollPane(
+        {
+          showArrows: true,
+          verticalArrowPositions: 'os'
+          //horizontalArrowPositions: 'os'
+        }
+        );
+    });

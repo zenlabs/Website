@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Zenlab::Application.load_tasks
+Webdw::Application.load_tasks

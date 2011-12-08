@@ -1,0 +1,18 @@
+= semantic_form_for [:admin, @page], :html =>{ :multipart => true} do |f|
+  = f.inputs "Create new page" do
+    = f.input :title
+    = f.input :content, :input_html => {:rows => '10'}
+    = f.semantic_fields_for :photos do |photo|
+      = render 'photo_fields', :f => photo
+    = f.semantic_fields_for :videos do |video|
+      = render 'video_fields', :f => video
+    .links
+      = link_to_add_association 'Add image', f, :photos
+      = link_to_add_association 'Add video', f, :videos
+    - if !f.object.new_record? && f.object.tag_list.to_s.downcase == 'staff'
+      = f.input :subtitle
+      = f.input :orden
+    - else
+      = f.input :subtitle, :wrapper_html => {:style => "display: none;"}
+    = f.input :tag_list, :as => :select, :collection => ["about", "services", "staff"], :include_blank => false
+  = f.buttons :commit

@@ -1,0 +1,6 @@
+- if videotron = get_video(@video.url)
+  %h3= videotron.title
+  %h2= videotron.service
+  %p= image_tag (videotron.thumbnail)
+  %p= videotron.embed_html.html_safe
+
