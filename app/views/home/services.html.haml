@@ -1,26 +1,34 @@
-.scroll-pane-os.grid_12.servicios
-  .scrollbar
-    .track
-      .thumb
-        .end
-  .viewport
-    .overview
-      - for service in @services
-        .service.grid_12
-          #text_left.about.staff
-            %h1= service.title
-            %p= service.content
-          #img_rigth.grid_5
-            = image_tag(service.last_photo_url(:medium), :alt => service.title)
+%script{:src => "js/jquery.cycle.all.js", :type => "text/javascript"}
+
+#worktitledesc
+  #worktitlecontainer
+    .worktitle.menutextblue
+    .workdesc
+.worksimagecontainer
+  #workimages
+    %img{:comment => "Cuponix aggregates and recommends the best daily deals of the most of chilean cities. We aggregate the best dailydeals from the majority of the coupons sites such as Groupon.", :desc => "Rails, Ux, Facebook Api, Web Scraping", :height => "320", :src => "../images/agonica.jpg", :title => "CUPONIX", :width => "320"}/
+    %img{:comment => "guitar guitar guitar guitar guitar guitar guitar guitar guitar guitar ", :desc => "fgfgfgfgfgfgfgfgfgfgfgfgf: my preferences: the best guitar: Ibañez", :height => "320", :src => "../images/guitar1.jpg", :title => "GUITAR 1", :width => "320"}/
+    %img{:comment => "guitar 2 guitar 2 guitar 2 guitar 2 guitar 2 guitar 2 guitar 2 guitar 2 guitar 2 guitar 2 guitar 2 guitar 2", :desc => " fgfgfgfgfgfgfgfgfgfgfgfgf: my preferences: another ibañez guitar", :height => "382", :src => "../images/guitar2.jpg", :title => "GUITAR 2", :width => "500"}/
+    %img{:comment => "developer developer developer v v v v developerdeveloperdeveloper developer developer developer developer developer developer developer vdeveloper developer developer", :desc => "fgfgfgfgfgfgfgfgfgfgfgfgf:  comment: this is a developer standar", :height => "335", :src => "../images/picturedeveloper2.png", :title => "DEVELOPER", :width => "290"}/
+.workimagesselector
+  #nav.nav.navigator
+#imagetextcontainer
+  .workimagetext
 
 :javascript
-  $(function()
-    {
-      $('.scroll-pane-os').jScrollPane(
-        {
-          showArrows: true,
-          verticalArrowPositions: 'os'
-          //horizontalArrowPositions: 'os'
-        }
-        );
-    });
+  $(document).ready(function(){
+     $("#pagecomment").html("Nuestros Trabajos");
+  });
+  $('#workimages').cycle({
+          fx:     'fade',
+          speed:  'slow',
+          speed:    300,
+          timeout:  5000,
+          pager:  '#nav',
+          after:   onAfter
+  });
+  function onAfter() {
+          $(".worktitle").html($(this).attr("title"));
+          $(".workdesc").html($(this).attr("desc"));
+          $(".workimagetext").html($(this).attr("comment"));
+  }

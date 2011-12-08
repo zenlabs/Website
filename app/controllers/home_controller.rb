@@ -31,7 +31,7 @@ class HomeController < ApplicationController
   end
   def contact
     @titulo = "Contact"
-    @message = Message.new
+    #@message = Message.new
   end
 end
 

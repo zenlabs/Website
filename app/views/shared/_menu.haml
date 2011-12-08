@@ -19,15 +19,15 @@
         &nbsp;&nbsp;&nbsp;&nbsp;cree que mas importante que los procesos y las<br />
         herramientas son el talento y la motivacion de<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; su gente
-      %a{ :obj=>"shadowcontact", :href=>"#", :class=>"menutextblue menuheader", :id=>"menucontacts"}
+      %a{ :obj=>"shadowcontact", :href=>"#{raw url_for(:action=>:contact, :controller => :home)}", :class=>"menutextblue menuheader", :id=>"menucontacts"}
         Contact
-      %a{ :obj=>"shadowblog", :href=>"#", :class=>"menutextblue menuheader", :id=>"menublogs"}
+      %a{ :obj=>"shadowblog", :href=>"#{raw url_for(:action => :index, :controller => :blog)}", :class=>"menutextblue menuheader", :id=>"menublogs"}
         Blogs
-      %a{ :obj=>"shadowworks", :href=>"#", :class=>"menutextblue menuheader", :id=>"menuworks"}
+      %a{ :obj=>"shadowworks", :href=>"#{raw url_for(:action=>:services, :controller=>:home)}", :class=>"menutextblue menuheader", :id=>"menuworks"}
         Trabajos
-      %a{ :obj=>"shadowwe", :href=>"#", :class=>"menutextblue menuheader", :id=>"menuwe"}
+      %a{ :obj=>"shadowwe", :href=>"#{raw url_for(:action=> :index, :controller => :staff)}", :class=>"menutextblue menuheader", :id=>"menuwe"}
         Nosotros
-      %a{ :obj=>"", :href=>"#", :class=>"zenlabsicon menuheader"}
+      %a{ :obj=>"", :href=>"#{raw root_path}", :class=>"zenlabsicon menuheader"}
         %img{:src=>"../images/zenlabsicon.png", :width=>"20", :height=>"22"}
 
 :javascript

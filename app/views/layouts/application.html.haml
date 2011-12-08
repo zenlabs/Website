@@ -10,7 +10,8 @@
     #mainwrapper
       = render "shared/menu"
       #bodywrapper
-        = render "shared/container"
+        /= render "shared/container"
+        = yield
       = render "shared/footer"
 
 
