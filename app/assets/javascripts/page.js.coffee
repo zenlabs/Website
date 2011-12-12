@@ -5,5 +5,7 @@ jQuery ->
   $("#page_tag_list").change ->
     if @value.toLowerCase().toString() == "staff"
       $("#page_subtitle_input").show()
+      $("#page_works_input").show()
     else
       $("#page_subtitle_input").hide()
+      $("#page_works_input").hide()

@@ -11,8 +11,9 @@
       = link_to_add_association 'Add video', f, :videos
     - if !f.object.new_record? && f.object.tag_list.to_s.downcase == 'staff'
       = f.input :subtitle
-      = f.input :orden
+      = f.input :works
     - else
       = f.input :subtitle, :wrapper_html => {:style => "display: none;"}
+      = f.input :works, :wrapper_html => {:style => "display: none;"}
     = f.input :tag_list, :as => :select, :collection => ["about", "services", "staff"], :include_blank => false
   = f.buttons :commit
