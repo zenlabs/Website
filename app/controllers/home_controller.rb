@@ -1,8 +1,9 @@
 class HomeController < ApplicationController
   def index
     @titulo = "Home Page - Zenlabs.net"
-    @pages = Page.all
+    @pages = Page.staff
     @gallery = Gallery.all
+    @blog = Post.all
   end
   def services
     @titulo = "Services"

@@ -1,40 +1,27 @@
 #developinfoleft
   #developinfofaces
-    %div{:class=>"developerinfofacebox", :dev=>"0"}
-      %img{ :width=>"26", :height=>"29", :src=>"../images/developerthumbnails.png"}
-    %div{:class=>"developerinfofacebox", :dev=>"0"}
-      %img{ :width=>"26", :height=>"29", :src=>"../images/developerthumbnails.png"}
-    %div{:class=>"developerinfofacebox", :dev=>"0"}
-      %img{:width=>"26", :height=>"29", :src=>"../images/developerthumbnails.png"}
-    %div{:class=>"developerinfofacebox", :dev=>"0"}
-      %img{:width=>"26", :height=>"29", :src=>"../images/developerthumbnails.png"}
-    %div{ :class=>"developerinfofacebox", :dev=>"0"}
-      %img{:width=>"26", :height=>"29", :src=>"../images/developerthumbnails.png"}
-    %div{:class=>"developerinfofacebox", :dev=>"1"}
-      %img{:width=>"26", :height=>"29", :src=>"../images/developerthumbnails2.png"}
-    %div{:class=>"developerinfofacebox", :dev=>"1"}
-      %img{:width=>"26", :height=>"29", :src=>"../images/developerthumbnails2.png"}
-    %div{:class=>"developerinfofacebox", :dev=>"1"}
-      %img{:width=>"26", :height=>"29", :src=>"../images/developerthumbnails2.png"}
+    - @pages.each do |staff|
+      .developerinfofacebox{:dev=>"#{staff.id}"}
+        = image_tag staff.last_photo_url, :size=>"26x29"
   #developinfobubbles
   #developinfopicture
-
 #developinforight
   #developinforightcontainer1
   #developinforightcontainer2
   #developinfotextcontainer
     #developername.pagecomment
-      Abraham Barrera
-    #developerrange
-      Desarrollador
-    #developercomment
-      Desde pequeño le gustó crear cosas, y no descubrió sino hasta la enseñanza media que la programación de computadores es la mejor forma de crear e innovar. Vibra desarrollando para móviles (iPhone/iPad),aunque también desarrolla en otras tecnologías como J2EE y Python
-    #medailcontainer
-      .frameworkicon
-      .frameworkicon
-      .frameworkicon
-      .frameworkicon
-      .frameworkicon
+    - @pages.each do |profile|
+      = profile.title
+      #developerrange
+        = profile.subtitle
+      #developercomment
+        = profile.content
+      #medailcontainer
+        .frameworkicon
+        .frameworkicon
+        .frameworkicon
+        .frameworkicon
+        .frameworkicon
 %br
 #bodyseparator
 
