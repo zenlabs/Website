@@ -6,6 +6,8 @@ jQuery ->
     if @value.toLowerCase().toString() == "staff"
       $("#page_subtitle_input").show()
       $("#page_works_input").show()
+      $("#page_web_input").show()
     else
       $("#page_subtitle_input").hide()
       $("#page_works_input").hide()
+      $("#page_web_input").hide()

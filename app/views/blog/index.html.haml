@@ -84,27 +84,19 @@
   			text-decoration:underline;
   		}
 #mainblogleft
-  .blogtitle Las certificaciones debieran morir. Haz tu parte.
-  .bloginfo posteado por: Abraham barrera| 18 de Junio del 2011 | 12 Comentarios
-  %br/
-  Hasta antes de ayer, mi reaccion a las certificaciones para desarrolladores era simple. No me interesaban.
-  Estaba de acuerdo con la idea general de que las certificaciones eran mayormente inutiles, pero eso era todo.
-  %br/
-  %br/
-  Ahora pienso distinto. Ahora pienso que son derechamente malas.
-  %br/
-  %br/
-  Las certificaciones han fallado en ser una buena forma indirecta de encontrar buenos desarrolladores.
-  Pero empersas ingenuas aún las usan para contratar. Entonces, ¿cuál es el gran problema?
-  %br/
-  %br/
-  El punto es: algunos buenos desarrolladores caerÁn en la trampa de hacer la famosa certificación porque todo lo que ven en el mercado que los rodea es que es requerida. En otras palabras, hay buenos desarrolladores que no van a tener acceso a una empresa decente, se van a rendir y se convertiran en certificados.
-  %br/
-  %br/
-  .blogseparator
-    .blogseparatorline
-    .blogseparatorlogo
-    .blogseparatorline
+  - @posts.each do |blog|
+    .blogtitle
+      =blog.title
+    .bloginfo
+      ="posteado por: #{} | #{blog.created_at.strftime("%d de %m del %Y")} | 12 Comentarios"
+    %br/
+    =blog.content
+    %br/
+    %br/
+    /.blogseparator
+    /.blogseparatorline
+    /.blogseparatorlogo
+    /.blogseparatorline
 #mainblogright{:style => "z-index:50000;"}
   .blogrightheader Últimas entradas
   .blogrightcontainer
